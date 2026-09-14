@@ -1,0 +1,68 @@
+<!--
+  ══════════════════════════════════════════════════════════════
+  SALT STUDIO SECTION, PARKED UNTIL LAUNCH
+  ══════════════════════════════════════════════════════════════
+  Removed from the live page on request because the brand isn't out yet.
+  Nothing here was deleted; it is kept whole so it can go straight back.
+
+  TO PUT IT BACK, five things:
+
+  1. Paste the markup below into index.html, directly above the line
+     <!-- CONTACT / INQUIRY --> .
+
+  2. Nav, in the <nav id="nav"> block, after the Videos link:
+       <a href="#shop">Salt Studio</a>
+
+  3. Hero strapline, the <p class="hero-foot">, change it back to:
+       Founder of <a href="#shop">Salt Studio</a> &middot; Based in South Africa &middot; Open to brands anywhere
+
+  4. Footer, in the .socials block after the TikTok icon:
+       <a href="https://saltstudio.co.za" target="_blank" rel="noopener" aria-label="Salt Studio" class="footer-salt">Salt Studio</a>
+     and set the footer tagline back to:
+       Content, campaigns, and one small perfume brand.
+
+  5. Meta description and og:description at the top of index.html, plus the
+     subtitle line in scripts/build-pdf.py (search "Founder of Salt Studio"),
+     then re-run: python3 scripts/build-pdf.py
+
+  The CSS it needs (.shop-band, .shop-copy, .ph-shop, .shop-img, .footer-salt)
+  was deliberately left in styles.css, so there is nothing to restore there.
+
+  Before it goes live, confirm saltstudio.co.za actually resolves.
+  ══════════════════════════════════════════════════════════════
+-->
+
+<!-- ───────────────────────── SALT STUDIO ───────────────────────── -->
+<section class="section section-tint" id="shop">
+  <div class="wrap">
+    <div class="shop-band">
+      <div class="shop-copy">
+        <p class="kicker accent-kicker">My own brand</p>
+        <h2>Salt Studio</h2>
+        <p>Three fragrances I made because I couldn't quite find what I was looking for. I ended up building the brand and the site too, which was a lot more work than I'd bargained for, and taught me most of what I know about actually selling a product.</p>
+        <!--
+          SALT STUDIO LINK
+          Pre-filled with saltstudio.co.za (the storefront in the salt-studio project).
+          TODO: confirm this is the live domain before the site goes out — if it isn't
+          up yet, set href="#" and add class="is-disabled" to the button.
+        -->
+        <a class="btn btn-dark" href="https://saltstudio.co.za" target="_blank" rel="noopener">Have a look at Salt Studio</a>
+      </div>
+
+      <!--
+        PHOTO SLOT 3: Salt Studio, ideally a product shot.
+        Save it as assets/salt-studio.jpg (4:3 landscape) and it appears.
+      -->
+      <div class="photo-slot">
+        <img class="shop-img" src="assets/salt-studio.jpg" alt="Salt Studio fragrances"
+             loading="lazy"
+             onerror="this.closest('.photo-slot').classList.add('no-photo'); this.remove();" />
+        <div class="ph ph-shop" role="img" aria-label="Placeholder for Salt Studio product photograph">
+          <span class="ph-label">Photo: Salt Studio</span>
+          <span class="ph-hint">Save as assets/salt-studio.jpg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
