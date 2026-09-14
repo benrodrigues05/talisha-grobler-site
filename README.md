@@ -22,42 +22,24 @@ assets/       drop photos, logos and video thumbnails here
 
 ---
 
-## 1. Wire up the form (do this first, 2 minutes)
+## 1. The form: connected
 
 Submissions go to **management@talishagrobler.com** through
-[Formspree](https://formspree.io). Free tier is 50 submissions a month,
-which is plenty.
+[Formspree](https://formspree.io), form ID `xjyvnrel`. Free tier is 50
+submissions a month, which is plenty.
 
-1. Go to **https://formspree.io** and click **Sign up**.
-2. Register with **management@talishagrobler.com**, which is the inbox the
-   inquiries land in, so it has to be this address.
-3. Once you're in: **+ New Project** → name it anything → **+ New Form**.
-   Call the form *Talisha, Partnership Inquiries*.
-4. Formspree shows you an endpoint that looks like this:
+**One thing to confirm on your end:** Formspree emails a one-time
+confirmation link the first time a form is used. If you haven't clicked
+that yet (check management@talishagrobler.com, subject line from
+Formspree), do that now, submissions silently go nowhere until you do.
 
-   ```
-   https://formspree.io/f/mabcdefg
-   ```
+If it ever needs to move to a different Formspree account or form, the only
+thing to change is the `action=` URL on the `<form>` tag in `index.html`
+(search `inquiryForm`). Nothing else needs touching.
 
-   The part after `/f/`, in this case `mabcdefg`, is your **form ID**.
-5. Open `index.html` and go to **line 422**, the `<form>` tag in the contact
-   section. Replace `YOUR_FORM_ID` with your ID:
-
-   ```html
-   <form id="inquiryForm" action="https://formspree.io/f/mabcdefg" method="POST" novalidate>
-   ```
-6. Save, reload the page, and **send yourself one test inquiry**. Formspree
-   emails a one-time confirmation link the very first time, so click it or
-   nothing after that gets delivered.
-
-Until step 5 is done the form validates normally but shows an amber
-*"Form not connected yet"* note instead of pretending to send. That's
-deliberate: no silent failures, no fake success screen.
-
-If a submission fails after it's connected, the visitor sees either
-Formspree's own reason (quota used up, form deactivated) or a fallback that
-points them at the email address. A dropped connection never surfaces a raw
-browser error.
+If a submission fails, the visitor sees either Formspree's own reason
+(quota used up, form deactivated) or a fallback that points them at the
+email address. A dropped connection never surfaces a raw browser error.
 
 **Worth knowing**
 
@@ -77,10 +59,10 @@ Everything replaceable is marked with a comment in `index.html`. Search for
 
 ### What still needs you
 
-1. **Formspree ID** (section 1 above). The form is dead until this is in.
-2. **Three logo files**: Juce, Cotton On, Brutal Fruit.
+1. **Three logo files**: Juce, Cotton On, Brutal Fruit.
 
-That's it. Every photo, figure and link on the page is real.
+That's the only thing left. Every photo, figure, link and the form itself
+are real and live.
 
 Nothing else is outstanding. The analytics, charts and downloadable PDF are
 all in and filled with real figures.
